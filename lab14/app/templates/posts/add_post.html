@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body style="background-color: #1a1a1a; color: #fff; font-family: 'Verdana', sans-serif; margin: 20px; padding: 20px;">
+
+    <div class="container">
+        <h1 class="mt-4" style="color: #ff6600;">Add Post</h1>
+        <br>
+        <form method="POST" action="{{ url_for('posts.add_post') }}" class="mt-3" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+            <div class="mb-3">
+                <label for="title" class="form-label" style="color: #ffcc00;">Title:</label>
+                {{ form.title(class="form-control") }}
+            </div>
+
+            <div class="mb-3">
+                <label for="text" class="form-label" style="color: #ffcc00;">Text:</label>
+                {{ form.text(class="form-control") }}
+            </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label" style="color: #ffcc00;">Image:</label>
+                {{ form.image(class="form-control") }}
+            </div>
+
+            <div class="mb-3">
+                <label for="type" class="form-label" style="color: #ffcc00;">Type:</label>
+                {{ form.type(class="form-control") }}
+            </div>
+
+            <div class="mb-3">
+                <label for="category" class="form-label" style="color: #ffcc00;">Category:</label>
+                {{ form.category(class="form-control") }}
+            </div>
+
+            <div class="mb-3">
+                <label for="category" class="form-label" style="color: #ffcc00;">Tags:</label>
+                <div class="input-group">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" style="color: #ffcc00; background-color: #1a1a1a; border-color: #ffcc00;">
+                        Select Tags
+                    </button>
+                    <div class="dropdown-menu" style="max-height: 200px; overflow-y: auto;">
+                        {% for tag_id, tag_name in form.tags.choices %}
+                            <div class="dropdown-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="tag{{ tag_id }}" name="tags"
+                                           value="{{ tag_id }}">
+                                    <label class="form-check-label" for="tag{{ tag_id }}" style="color: #ffcc00;">{{ tag_name }}</label>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success" style="background-color: #990000; border: none; cursor: pointer;">Submit</button>
+        </form>
+        <br><br>
+    </div>
+
+</body>
+{% endblock %}

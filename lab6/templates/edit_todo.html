@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Todo</title>
+    <link href="../static/css/style.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #1a1a1a; /* Dark background */
+            color: #fff; /* White text */
+        }
+
+        h1 {
+            color: #ff6600; /* Orange heading */
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #333; /* Dark form background */
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffcc00; /* Yellow label text */
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #555; /* Darker border */
+            border-radius: 4px;
+            background-color: #1a1a1a; /* Dark input background */
+            color: #fff; /* White text in input */
+        }
+
+        button {
+            background-color: #990000; /* Dark red button */
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #800000; /* Darker red on hover for button */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Edit Todo</h1>
+
+        <form method="POST" action="{{ url_for('edit_todo', id=todo.id) }}">
+            {{ form.hidden_tag() }}
+
+            <label for="{{ form.title.id }}">Title:</label>
+            {{ form.title() }}
+            <br><br>
+
+            <label for="{{ form.description.id }}">Description:</label>
+            {{ form.description() }}
+            <br><br>
+
+            <label for="{{ form.completed.id }}">Completed:</label>
+            {{ form.completed() }}
+            <br><br>
+
+            {{ form.submit() }}
+        </form>
+    </div>
+
+</body>
+</html>

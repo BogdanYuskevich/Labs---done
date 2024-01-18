@@ -1,0 +1,14 @@
+{
+    "biba": {
+        "username": "biba",
+        "password": "password3"
+    },
+    "user2": {
+        "username": "user2",
+        "password": "password2"
+    },
+    "user3": {
+        "username": "user3",
+        "password": "password3"
+    }
+}

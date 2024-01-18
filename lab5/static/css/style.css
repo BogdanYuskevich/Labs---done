@@ -1,0 +1,61 @@
+body {
+    font-family: 'Verdana', sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #1a1a1a; /* Dark background */
+    color: #fff; /* White text */
+}
+
+h1 {
+    color: #ff6600; /* Orange heading */
+}
+
+p {
+    color: #cccccc; /* Light gray text */
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffcc00; /* Yellow label text */
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #990000; /* Dark red button */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #333; /* Dark borders */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    color: #fff; /* White text in cells */
+}
+
+th {
+    background-color: #333; /* Dark background for headers */
+    color: #ffcc00; /* Yellow text in headers */
+}

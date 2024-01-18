@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    <div style="background-color: #1a1a1a; padding: 20px; color: #fff; text-align: center;">
+        <h2 style="color: #ff6600; margin-bottom: 20px;">Register</h2>
+        <form method="post" action="{{ url_for('register') }}" style="background-color: #000; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);">
+            {{ form.hidden_tag() }}
+            <div class="form-group" style="margin-bottom: 15px;">
+                {{ form.username.label(class="form-control-label", style="color: #ffcc00; display: block; margin-bottom: 5px;") }}
+                {{ form.username(class="form-control", style="width: 100%; padding: 10px; box-sizing: border-box;") }}
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                {{ form.email.label(class="form-control-label", style="color: #ffcc00; display: block; margin-bottom: 5px;") }}
+                {{ form.email(class="form-control", style="width: 100%; padding: 10px; box-sizing: border-box;") }}
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                {{ form.password.label(class="form-control-label", style="color: #ffcc00; display: block; margin-bottom: 5px;") }}
+                {{ form.password(class="form-control", style="width: 100%; padding: 10px; box-sizing: border-box;") }}
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                {{ form.confirm_password.label(class="form-control-label", style="color: #ffcc00; display: block; margin-bottom: 5px;") }}
+                {{ form.confirm_password(class="form-control", style="width: 100%; padding: 10px; box-sizing: border-box;") }}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary", style="background-color: #990000; border: none; cursor: pointer; padding: 12px; width: 100%; box-sizing: border-box;") }}
+            </div>
+        </form>
+        <p style="color: #cccccc;">Already have an account? <a href="{{ url_for('login') }}" style="color: #ff6600;">Log in</a></p>
+    </div>
+{% endblock %}
